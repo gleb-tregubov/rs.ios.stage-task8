@@ -171,7 +171,18 @@
 }
 
 - (void)sharePicture:(ArtistButton *)sender {
-    
+    CGRect rect = [self.drawingView bounds];
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.drawingView.layer renderInContext:context];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSArray *activityItems = @[img];
+    UIActivityViewController *activityViewControntroller = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    activityViewControntroller.excludedActivityTypes = @[];
+    activityViewControntroller.popoverPresentationController.sourceView = self.view;
+    activityViewControntroller.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/4, 0, 0);
+    [self presentViewController:activityViewControntroller animated:YES completion:nil];
 }
 
 
