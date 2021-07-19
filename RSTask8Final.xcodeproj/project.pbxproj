@@ -9,11 +9,21 @@
 /* Begin PBXBuildFile section */
 		53195C2026A3C3BF0088D802 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53195C1F26A3C3BF0088D802 /* AppDelegate.m */; };
 		53195C2326A3C3BF0088D802 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53195C2226A3C3BF0088D802 /* SceneDelegate.m */; };
-		53195C2626A3C3BF0088D802 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53195C2526A3C3BF0088D802 /* ViewController.m */; };
-		53195C2926A3C3BF0088D802 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53195C2726A3C3BF0088D802 /* Main.storyboard */; };
 		53195C2B26A3C3C20088D802 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53195C2A26A3C3C20088D802 /* Assets.xcassets */; };
 		53195C2E26A3C3C20088D802 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53195C2C26A3C3C20088D802 /* LaunchScreen.storyboard */; };
 		53195C3126A3C3C20088D802 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53195C3026A3C3C20088D802 /* main.m */; };
+		53195C3A26A3C4C50088D802 /* ArtistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53195C3826A3C4C50088D802 /* ArtistViewController.m */; };
+		53195C4026A3C5F80088D802 /* DrawingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53195C3E26A3C5F80088D802 /* DrawingsViewController.m */; };
+		53195C4526A3C7880088D802 /* PaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53195C4326A3C7880088D802 /* PaletteViewController.m */; };
+		531A3C0426A58F160013F4EB /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A3C0326A58F160013F4EB /* TimerViewController.swift */; };
+		53535EF526A3F899004E1AFB /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53535EF426A3F879004E1AFB /* Montserrat-Medium.ttf */; };
+		53535EF626A3F89C004E1AFB /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53535EF326A3F879004E1AFB /* Montserrat-Regular.ttf */; };
+		53535EFE26A436AE004E1AFB /* ArtistButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 53535EFD26A436AE004E1AFB /* ArtistButton.m */; };
+		53535F0226A4672B004E1AFB /* HalfScreenSuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53535F0126A4672B004E1AFB /* HalfScreenSuperViewController.m */; };
+		53535F0626A46857004E1AFB /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53535F0526A46857004E1AFB /* TimerViewController.m */; };
+		53535F0B26A46E75004E1AFB /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 53535F0A26A46E75004E1AFB /* ColorButton.m */; };
+		53841BD526A52B650092A6B8 /* DrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53841BD426A52B650092A6B8 /* DrawingView.m */; };
+		53841BD926A530720092A6B8 /* DrawingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 53841BD826A530720092A6B8 /* DrawingButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +32,33 @@
 		53195C1F26A3C3BF0088D802 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		53195C2126A3C3BF0088D802 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		53195C2226A3C3BF0088D802 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		53195C2426A3C3BF0088D802 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		53195C2526A3C3BF0088D802 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		53195C2826A3C3BF0088D802 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53195C2A26A3C3C20088D802 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53195C2D26A3C3C20088D802 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53195C2F26A3C3C20088D802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53195C3026A3C3C20088D802 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		53195C3726A3C4C50088D802 /* ArtistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtistViewController.h; sourceTree = "<group>"; };
+		53195C3826A3C4C50088D802 /* ArtistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtistViewController.m; sourceTree = "<group>"; };
+		53195C3D26A3C5F80088D802 /* DrawingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingsViewController.h; sourceTree = "<group>"; };
+		53195C3E26A3C5F80088D802 /* DrawingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingsViewController.m; sourceTree = "<group>"; };
+		53195C4226A3C7880088D802 /* PaletteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaletteViewController.h; sourceTree = "<group>"; };
+		53195C4326A3C7880088D802 /* PaletteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaletteViewController.m; sourceTree = "<group>"; };
+		531A3C0226A58F160013F4EB /* RSTask8Final-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSTask8Final-Bridging-Header.h"; sourceTree = "<group>"; };
+		531A3C0326A58F160013F4EB /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		53535EF326A3F879004E1AFB /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		53535EF426A3F879004E1AFB /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		53535EFC26A436AE004E1AFB /* ArtistButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtistButton.h; sourceTree = "<group>"; };
+		53535EFD26A436AE004E1AFB /* ArtistButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtistButton.m; sourceTree = "<group>"; };
+		53535F0026A4672B004E1AFB /* HalfScreenSuperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfScreenSuperViewController.h; sourceTree = "<group>"; };
+		53535F0126A4672B004E1AFB /* HalfScreenSuperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfScreenSuperViewController.m; sourceTree = "<group>"; };
+		53535F0426A46857004E1AFB /* TimerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		53535F0526A46857004E1AFB /* TimerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		53535F0926A46E75004E1AFB /* ColorButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
+		53535F0A26A46E75004E1AFB /* ColorButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
+		53841BD326A52B650092A6B8 /* DrawingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingView.h; sourceTree = "<group>"; };
+		53841BD426A52B650092A6B8 /* DrawingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingView.m; sourceTree = "<group>"; };
+		53841BD726A530720092A6B8 /* DrawingButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingButton.h; sourceTree = "<group>"; };
+		53841BD826A530720092A6B8 /* DrawingButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingButton.m; sourceTree = "<group>"; };
+		53841BDB26A536740092A6B8 /* DrawingButton+PictureTypeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DrawingButton+PictureTypeEnum.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,15 +95,131 @@
 				53195C1F26A3C3BF0088D802 /* AppDelegate.m */,
 				53195C2126A3C3BF0088D802 /* SceneDelegate.h */,
 				53195C2226A3C3BF0088D802 /* SceneDelegate.m */,
-				53195C2426A3C3BF0088D802 /* ViewController.h */,
-				53195C2526A3C3BF0088D802 /* ViewController.m */,
-				53195C2726A3C3BF0088D802 /* Main.storyboard */,
+				53535EF226A3F808004E1AFB /* Fonts */,
+				53535EFF26A436B5004E1AFB /* Views */,
+				53195C3C26A3C5E50088D802 /* Screens */,
 				53195C2A26A3C3C20088D802 /* Assets.xcassets */,
 				53195C2C26A3C3C20088D802 /* LaunchScreen.storyboard */,
 				53195C2F26A3C3C20088D802 /* Info.plist */,
 				53195C3026A3C3C20088D802 /* main.m */,
 			);
 			path = RSTask8Final;
+			sourceTree = "<group>";
+		};
+		53195C3C26A3C5E50088D802 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				53195C4F26A3E1E70088D802 /* ArtistViewController */,
+				53195C5026A3E22E0088D802 /* DrawingsViewController */,
+				53535F0726A46860004E1AFB /* TimerViewController */,
+				53195C5126A3E2570088D802 /* PaletteViewController */,
+				53535F0326A46739004E1AFB /* HalfScreenSuperViewController */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		53195C4F26A3E1E70088D802 /* ArtistViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53195C3726A3C4C50088D802 /* ArtistViewController.h */,
+				53195C3826A3C4C50088D802 /* ArtistViewController.m */,
+			);
+			path = ArtistViewController;
+			sourceTree = "<group>";
+		};
+		53195C5026A3E22E0088D802 /* DrawingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53195C3D26A3C5F80088D802 /* DrawingsViewController.h */,
+				53195C3E26A3C5F80088D802 /* DrawingsViewController.m */,
+			);
+			path = DrawingsViewController;
+			sourceTree = "<group>";
+		};
+		53195C5126A3E2570088D802 /* PaletteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53195C4226A3C7880088D802 /* PaletteViewController.h */,
+				53195C4326A3C7880088D802 /* PaletteViewController.m */,
+			);
+			path = PaletteViewController;
+			sourceTree = "<group>";
+		};
+		53535EF226A3F808004E1AFB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				53535EF426A3F879004E1AFB /* Montserrat-Medium.ttf */,
+				53535EF326A3F879004E1AFB /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		53535EFF26A436B5004E1AFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				53535F0826A46E51004E1AFB /* ArtistButton */,
+				53535F0C26A46E79004E1AFB /* ColorButtonView */,
+				53841BD626A52B6D0092A6B8 /* drawingVIew */,
+				53841BDA26A530810092A6B8 /* DrawingButton */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		53535F0326A46739004E1AFB /* HalfScreenSuperViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53535F0026A4672B004E1AFB /* HalfScreenSuperViewController.h */,
+				53535F0126A4672B004E1AFB /* HalfScreenSuperViewController.m */,
+			);
+			path = HalfScreenSuperViewController;
+			sourceTree = "<group>";
+		};
+		53535F0726A46860004E1AFB /* TimerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53535F0426A46857004E1AFB /* TimerViewController.h */,
+				53535F0526A46857004E1AFB /* TimerViewController.m */,
+				531A3C0326A58F160013F4EB /* TimerViewController.swift */,
+				531A3C0226A58F160013F4EB /* RSTask8Final-Bridging-Header.h */,
+			);
+			path = TimerViewController;
+			sourceTree = "<group>";
+		};
+		53535F0826A46E51004E1AFB /* ArtistButton */ = {
+			isa = PBXGroup;
+			children = (
+				53535EFC26A436AE004E1AFB /* ArtistButton.h */,
+				53535EFD26A436AE004E1AFB /* ArtistButton.m */,
+			);
+			path = ArtistButton;
+			sourceTree = "<group>";
+		};
+		53535F0C26A46E79004E1AFB /* ColorButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				53535F0926A46E75004E1AFB /* ColorButton.h */,
+				53535F0A26A46E75004E1AFB /* ColorButton.m */,
+			);
+			path = ColorButtonView;
+			sourceTree = "<group>";
+		};
+		53841BD626A52B6D0092A6B8 /* drawingVIew */ = {
+			isa = PBXGroup;
+			children = (
+				53841BD326A52B650092A6B8 /* DrawingView.h */,
+				53841BD426A52B650092A6B8 /* DrawingView.m */,
+			);
+			path = drawingVIew;
+			sourceTree = "<group>";
+		};
+		53841BDA26A530810092A6B8 /* DrawingButton */ = {
+			isa = PBXGroup;
+			children = (
+				53841BD726A530720092A6B8 /* DrawingButton.h */,
+				53841BD826A530720092A6B8 /* DrawingButton.m */,
+				53841BDB26A536740092A6B8 /* DrawingButton+PictureTypeEnum.h */,
+			);
+			path = DrawingButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +252,7 @@
 				TargetAttributes = {
 					53195C1A26A3C3BF0088D802 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -132,9 +279,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53535EF626A3F89C004E1AFB /* Montserrat-Regular.ttf in Resources */,
 				53195C2E26A3C3C20088D802 /* LaunchScreen.storyboard in Resources */,
+				53535EF526A3F899004E1AFB /* Montserrat-Medium.ttf in Resources */,
 				53195C2B26A3C3C20088D802 /* Assets.xcassets in Resources */,
-				53195C2926A3C3BF0088D802 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,24 +293,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53195C2626A3C3BF0088D802 /* ViewController.m in Sources */,
+				53195C4526A3C7880088D802 /* PaletteViewController.m in Sources */,
 				53195C2026A3C3BF0088D802 /* AppDelegate.m in Sources */,
+				53841BD926A530720092A6B8 /* DrawingButton.m in Sources */,
+				53535F0626A46857004E1AFB /* TimerViewController.m in Sources */,
 				53195C3126A3C3C20088D802 /* main.m in Sources */,
+				53535F0226A4672B004E1AFB /* HalfScreenSuperViewController.m in Sources */,
+				53195C4026A3C5F80088D802 /* DrawingsViewController.m in Sources */,
+				53535EFE26A436AE004E1AFB /* ArtistButton.m in Sources */,
+				53535F0B26A46E75004E1AFB /* ColorButton.m in Sources */,
 				53195C2326A3C3BF0088D802 /* SceneDelegate.m in Sources */,
+				531A3C0426A58F160013F4EB /* TimerViewController.swift in Sources */,
+				53195C3A26A3C4C50088D802 /* ArtistViewController.m in Sources */,
+				53841BD526A52B650092A6B8 /* DrawingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		53195C2726A3C3BF0088D802 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				53195C2826A3C3BF0088D802 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		53195C2C26A3C3C20088D802 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,15 +440,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HCZ476YPVU;
 				INFOPLIST_FILE = RSTask8Final/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.glebtregubov.RSTask8Final;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RSTask8Final/Screens/TimerViewController/RSTask8Final-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -309,15 +463,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HCZ476YPVU;
 				INFOPLIST_FILE = RSTask8Final/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.glebtregubov.RSTask8Final;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RSTask8Final/Screens/TimerViewController/RSTask8Final-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
