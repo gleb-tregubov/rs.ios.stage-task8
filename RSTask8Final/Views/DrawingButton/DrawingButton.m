@@ -38,6 +38,16 @@
     self.contentEdgeInsets = UIEdgeInsetsMake(9.0, 47.0, 9.0, 47.0);
 }
 
+//- (void)setActive {
+//    self.layer.shadowColor = [UIColor colorNamed:@"Light Green Sea"].CGColor;
+//    self.layer.shadowRadius = 4;
+//}
+//
+//- (void)setDefault {
+//    self.layer.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.25].CGColor;
+//    self.layer.shadowRadius = 2;
+//}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

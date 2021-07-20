@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) float drawingSpeed;
 @property (weak, nonatomic) ArtistViewController *delegate;
 
+- (void)clearLayer;
+
 @end
 
 NS_ASSUME_NONNULL_END

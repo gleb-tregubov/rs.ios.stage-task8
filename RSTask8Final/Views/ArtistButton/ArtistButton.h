@@ -12,7 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ArtistButton : UIButton
 
 - (instancetype)initWithFrame:(CGRect)frame andTitle:(NSString *)title;
-//- (instancetype)initWithFrame:(CGRect)frame;
+
+- (void)setHighlightedState;
+- (void)setDefaultState;
+- (void)setDisabledState;
 
 @end
 

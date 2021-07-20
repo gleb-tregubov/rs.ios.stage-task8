@@ -13,6 +13,8 @@
 
 @interface DrawingsViewController ()
 
+@property (strong, nonatomic) DrawingButton* currentButton;
+
 @end
 
 @implementation DrawingsViewController
@@ -29,6 +31,8 @@
     [super viewWillAppear:animated];
     
     [self setupNavigationItems];
+    [self.currentButton setHighlightedState];
+
 }
 
 - (void)setupNavigationItems {
@@ -38,26 +42,37 @@
 
 - (void)configuringDrawingButtons {
     
-    DrawingButton *planetButton = [[DrawingButton alloc] initWithFrame:CGRectMake(88.0, 114.0, 200.0, 40.0) title:@"Planet" andPictureTypeEnum:pictureTypePlanet];
+    self.planetButton = [[DrawingButton alloc] initWithFrame:CGRectMake(88.0, 114.0, 200.0, 40.0) title:@"Planet" andPictureTypeEnum:pictureTypePlanet];
     
-    DrawingButton *headButton = [[DrawingButton alloc] initWithFrame:CGRectMake(88.0, 169.0, 200.0, 40.0) title:@"Head" andPictureTypeEnum:pictureTypeHead];
+    self.headButton = [[DrawingButton alloc] initWithFrame:CGRectMake(88.0, 169.0, 200.0, 40.0) title:@"Head" andPictureTypeEnum:pictureTypeHead];
+    [self.headButton setHighlightedState];
     
-    DrawingButton *treeButton = [[DrawingButton alloc] initWithFrame:CGRectMake(88.0, 224.0, 200.0, 40.0) title:@"Tree" andPictureTypeEnum:pictureTypeTree];
+    self.treeButton = [[DrawingButton alloc] initWithFrame:CGRectMake(88.0, 224.0, 200.0, 40.0) title:@"Tree" andPictureTypeEnum:pictureTypeTree];
     
-    DrawingButton *landscapeButton = [[DrawingButton alloc] initWithFrame:CGRectMake(88.0, 279.0, 200.0, 40.0) title:@"Landscape" andPictureTypeEnum:pictureTypeLandscape];
+    self.landscapeButton = [[DrawingButton alloc] initWithFrame:CGRectMake(88.0, 279.0, 200.0, 40.0) title:@"Landscape" andPictureTypeEnum:pictureTypeLandscape];
     
-    planetButton.delegate = self;
-    headButton.delegate = self;
-    treeButton.delegate = self;
-    landscapeButton.delegate = self;
+    self.planetButton.delegate = self;
+    self.headButton.delegate = self;
+    self.treeButton.delegate = self;
+    self.landscapeButton.delegate = self;
     
-    [self.view addSubview:planetButton];
-    [self.view addSubview:headButton];
-    [self.view addSubview:treeButton];
-    [self.view addSubview:landscapeButton];
+    [self.view addSubview:self.planetButton];
+    [self.view addSubview:self.headButton];
+    [self.view addSubview:self.treeButton];
+    [self.view addSubview:self.landscapeButton];
 }
 
+
+
 -(void)drawingButtonTapped:(DrawingButton *)sender {
+    [self.planetButton setDefaultState];
+    [self.headButton setDefaultState];
+    [self.treeButton setDefaultState];
+    [self.landscapeButton setDefaultState];
+    
+    [sender setHighlightedState];
+    self.currentButton = sender;
+    NSLog(@"SNDER: %@", sender);
     NSLog(@"sender picture type with click %ld", (long)sender.pictureType);
     self.drawingView.pictureType = (NSInteger)sender.pictureType;
     [self.navigationController popToRootViewControllerAnimated:YES];

@@ -80,6 +80,10 @@
     }
 }
 
+- (void)clearLayer {
+    [self.drawingLayer removeFromSuperlayer];
+}
+
 -(void)preparing {
     [self.drawingLayer removeFromSuperlayer];
     
@@ -465,12 +469,13 @@
     
     //// head-frame.svg Group
     
+    
     //// Rectangle Drawing
     UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: CGRectMake(0, 0, 300, 300)];
     [fillColor setFill];
     [rectanglePath fill];
-    
-    
+
+
     //// Bezier Drawing
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
     [bezierPath moveToPoint: CGPointMake(71.91, 43.24)];
@@ -492,14 +497,7 @@
     bezierPath.lineWidth = 1;
     bezierPath.miterLimit = 4;
     bezierPath.lineCapStyle = kCGLineCapRound;
-    
-    UIColor *firstColor = [UIColor colorWithCGColor:self.colorQueue[0].layer.backgroundColor];
-//    NSLog(@"%@", self.colorQueue[0].layer.backgroundColor);
-    firstColor = UIColor.redColor;
-    [firstColor setStroke];
-    [bezierPath stroke];
 
-    
     //// Bezier 2 Drawing
     UIBezierPath* bezier2Path = [UIBezierPath bezierPath];
     [bezier2Path moveToPoint: CGPointMake(180, 105.88)];
@@ -544,9 +542,7 @@
     bezier2Path.lineWidth = 1;
     bezier2Path.miterLimit = 4;
     bezier2Path.lineCapStyle = kCGLineCapRound;
-    
-    [bezier2Path stroke];
-    
+
     //// Bezier 3 Drawing
     UIBezierPath* bezier3Path = [UIBezierPath bezierPath];
     [bezier3Path moveToPoint: CGPointMake(184.85, 108.09)];
@@ -599,14 +595,13 @@
     bezier3Path.lineWidth = 1;
     bezier3Path.miterLimit = 4;
     bezier3Path.lineCapStyle = kCGLineCapRound;
-    
-    
+
+
     UIBezierPath *resultPath = [[UIBezierPath alloc] init];
     [resultPath appendPath:bezierPath];
     [resultPath appendPath:bezier2Path];
     [resultPath appendPath:bezier3Path];
-    [resultPath stroke];
-    
+
     return resultPath;
 }
 

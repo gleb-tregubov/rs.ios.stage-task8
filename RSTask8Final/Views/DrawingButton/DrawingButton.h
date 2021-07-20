@@ -25,6 +25,8 @@ typedef NS_ENUM(NSInteger, pictureType) {
 @property (assign, nonatomic) pictureType pictureType;
 
 -(instancetype)initWithFrame:(CGRect)frame title:(NSString *)title andPictureTypeEnum:(pictureType)pictureType;
+//- (void)setDefault;
+//- (void)setActive;
 
 @end
 

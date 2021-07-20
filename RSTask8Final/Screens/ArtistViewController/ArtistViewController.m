@@ -24,10 +24,27 @@
 
 @interface ArtistViewController ()
 
+enum state {
+    stateIdle,
+    stateDone,
+    stateDraw
+};
+typedef enum state state;
+
 @property (strong, nonatomic) DrawingsViewController *drawingVC;
 @property (strong, nonatomic) PaletteViewController *paletteChildVC;
 @property (strong, nonatomic) TimerViewController *timerChildVC;
 @property (strong, nonatomic) DrawingView *drawingView;
+
+@property (strong, nonatomic) ArtistButton* shareButton;
+@property (strong, nonatomic) ArtistButton* drawButton;
+@property (strong, nonatomic) ArtistButton* paletteButton;
+@property (strong, nonatomic) ArtistButton* timerButton;
+@property (strong, nonatomic) UIBarButtonItem* drawingsRightBarButton;
+
+@property (assign, nonatomic) state currentState;
+@property (strong, nonatomic) NSTimer * timer;
+
 
 @end
 
@@ -62,9 +79,10 @@
         NSFontAttributeName:[UIFont fontWithName:@"Montserrat-Regular" size:17.0f]
     }];
     
-    UIBarButtonItem *drawingsRightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Drawings" style:UIBarButtonItemStylePlain target:self action:@selector(drawingsRightBarButtonTapped)];
+    self.drawingsRightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Drawings" style:UIBarButtonItemStylePlain target:self action:@selector(drawingsRightBarButtonTapped)];
     
-    self.navigationItem.rightBarButtonItem = drawingsRightBarButton;
+    
+    self.navigationItem.rightBarButtonItem = self.drawingsRightBarButton;
     
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{
         NSFontAttributeName:[UIFont fontWithName:@"Montserrat-Regular" size:17.0f] }
@@ -97,52 +115,57 @@
 
 - (void)configuringArtistButtons {
     
-    ArtistButton *paletteButton = [[ArtistButton alloc] initWithFrame:CGRectMake(20.0, 454.0, 163.0, 32.0) andTitle:@"Open Palette"];
-    ArtistButton *drawButton = [[ArtistButton alloc] initWithFrame:CGRectMake(243.0, 454.0, 91.0, 32.0) andTitle:@"Draw"];
-    ArtistButton *timerButton = [[ArtistButton alloc] initWithFrame:CGRectMake(20.0, 506.0, 151.0, 32.0) andTitle:@"Open Timer"];
-    ArtistButton *shareButton = [[ArtistButton alloc] initWithFrame:CGRectMake(239.0, 506.0, 95.0, 32.0) andTitle:@"Share"];
+    self.paletteButton = [[ArtistButton alloc] initWithFrame:CGRectMake(20.0, 454.0, 163.0, 32.0) andTitle:@"Open Palette"];
+    self.drawButton = [[ArtistButton alloc] initWithFrame:CGRectMake(243.0, 454.0, 101.0, 32.0) andTitle:@"Draw"];
+    self.timerButton = [[ArtistButton alloc] initWithFrame:CGRectMake(20.0, 506.0, 151.0, 32.0) andTitle:@"Open Timer"];
+    self.shareButton = [[ArtistButton alloc] initWithFrame:CGRectMake(239.0, 506.0, 95.0, 32.0) andTitle:@"Share"];
+    [self.shareButton setDisabledState];
     
-//    UIButton *paletteButton = [[UIButton alloc] initWithFrame:CGRectMake(20.0, 454.0, 163.0, 32.0)];
-//    UIButton *drawButton = [[UIButton alloc] initWithFrame:CGRectMake(234.0, 454.0, 91.0, 32.0)];
-//    UIButton *timerButton = [[UIButton alloc] initWithFrame:CGRectMake(20.0, 506.0, 151.0, 32.0)];
-//    UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(239.0, 506.0, 95.0, 32.0)];
-//
-//    [paletteButton setTitle:@"Open Palette" forState:UIControlStateNormal];
-//    [drawButton setTitle:@"Draw" forState:UIControlStateNormal];
-//    [timerButton setTitle:@"Open Timer" forState:UIControlStateNormal];
-//    [shareButton setTitle:@"Share" forState:UIControlStateNormal];
-//
-//    [paletteButton setTitleColor:[UIColor colorNamed:@"Light Green Sea"] forState:UIControlStateNormal];
-//    [drawButton setTitleColor:[UIColor colorNamed:@"Light Green Sea"] forState:UIControlStateNormal];
-//    [timerButton setTitleColor:[UIColor colorNamed:@"Light Green Sea"] forState:UIControlStateNormal];
-//    [shareButton setTitleColor:[UIColor colorNamed:@"Light Green Sea"] forState:UIControlStateNormal];
-//
-//    paletteButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Medium" size:18.0];
-//    drawButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Medium" size:18.0];
-//    timerButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Medium" size:18.0];
-//    shareButton.titleLabel.font = [UIFont fontWithName:@"Montserrat-Medium" size:18.0];
+    [self.paletteButton addTarget:self action:@selector(openPalette:) forControlEvents:UIControlEventTouchUpInside];
+    [self.drawButton addTarget:self action:@selector(drawPicture:) forControlEvents:UIControlEventTouchUpInside];
+    [self.timerButton addTarget:self action:@selector(openTimer:) forControlEvents:UIControlEventTouchUpInside];
+    [self.shareButton addTarget:self action:@selector(sharePicture:) forControlEvents:UIControlEventTouchUpInside];
     
-//    [paletteButton addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
-//    [drawButton addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
-//    [timerButton addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
-//    [shareButton addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
-    
-    [paletteButton addTarget:self action:@selector(openPalette:) forControlEvents:UIControlEventTouchUpInside];
-    [drawButton addTarget:self action:@selector(drawPicture:) forControlEvents:UIControlEventTouchUpInside];
-    [timerButton addTarget:self action:@selector(openTimer:) forControlEvents:UIControlEventTouchUpInside];
-    [shareButton addTarget:self action:@selector(sharePicture:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:paletteButton];
-    [self.view addSubview:drawButton];
-    [self.view addSubview:timerButton];
-    [self.view addSubview:shareButton];
+    [self.view addSubview:self.paletteButton];
+    [self.view addSubview:self.drawButton];
+    [self.view addSubview:self.timerButton];
+    [self.view addSubview:self.shareButton];
     
 }
 
-//-(void)drawingButtonTapped:(DrawingButton *)sender {
-//    NSLog(@"111");
-//    NSLog(@"%u", sender.pictureType);
-//}
+- (void)setIdleState {
+    self.currentState = stateIdle;
+    [self.paletteButton setDefaultState];
+    [self.drawButton setDefaultState];
+    [self.timerButton setDefaultState];
+    [self.shareButton setDisabledState];
+    
+    self.drawingsRightBarButton.enabled = YES;
+    self.drawingsRightBarButton.customView.alpha = 1;
+    
+}
+
+- (void)setDrawState {
+    self.currentState = stateDraw;
+    [self.paletteButton setDisabledState];
+    [self.timerButton setDisabledState];
+    [self.drawButton setDisabledState];
+    [self.shareButton setDisabledState];
+    
+    self.drawingsRightBarButton.enabled = NO;
+    self.drawingsRightBarButton.customView.alpha = 0.5;
+    
+    NSLog(@"Alpha");
+}
+
+- (void)setDoneState {
+    self.currentState = stateDone;
+    [self.paletteButton setDisabledState];
+    [self.timerButton setDisabledState];
+    [self.drawButton setDefaultState];
+    [self.shareButton setDefaultState];
+    
+}
 
 - (void)showHalfScreenChildVC:(UIViewController *)controller {
 //    NSLog(@"111");
@@ -157,13 +180,32 @@
 }
 
 - (void)drawPicture:(ArtistButton *)sender {
-    NSLog(@"123123");
-    [self.drawingView setNeedsDisplay];
+    if (self.currentState == stateIdle) {
+        [self setDrawState];
+        NSLog(@"123123");
+        if (self.drawingView.pictureType == 0) {
+            self.drawingView.pictureType = 2; // Drawing Head in via Starting Case
+    //        [self.drawingVC.headButton setActive];
+        }
+        [self.drawingView setNeedsDisplay];
+        [self.timer invalidate];
+        [self setDoneState];
+        [self.drawButton setTitle:@"Reset" forState:UIControlStateNormal];
+//        [self.drawButton setNeedsDisplay];
+    } else if (self.currentState == stateDone) {
+        [self setIdleState];
+//        [self.timer invalidate];
+        [self.drawButton setTitle:@"Draw" forState:UIControlStateNormal];
+        [self.drawingView clearLayer];
+//        [self.drawingView.drawingLayer removeFromSuperlayer];
+//        [self.drawingView setNeedsDisplay];
+        
+    }
 }
 
 - (void)justDrawing {
     float interval = 1.0/60.0;
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self.drawingView selector:@selector(changeStrokeEnd) userInfo:nil repeats:true];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self.drawingView selector:@selector(changeStrokeEnd) userInfo:nil repeats:true];
 }
 
 - (void)openTimer:(ArtistButton *)sender {

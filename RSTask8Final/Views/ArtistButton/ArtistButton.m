@@ -33,6 +33,27 @@
     self.layer.cornerRadius = 10;
 }
 
+- (void)setHighlightedState {
+    self.layer.shadowColor = [UIColor colorNamed:@"Light Green Sea"].CGColor;
+    self.layer.shadowRadius = 4.0;
+    self.alpha = 1.0;
+    [self setEnabled:YES];
+}
+
+- (void)setDefaultState {
+    self.layer.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.25].CGColor;
+    self.layer.shadowRadius = 2.0;
+    self.alpha = 1.0;
+    [self setEnabled:YES];
+}
+
+- (void)setDisabledState {
+    self.layer.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.25].CGColor;
+    self.layer.shadowRadius = 2.0;
+    self.alpha = 0.5;
+    self.enabled = NO;
+}
+
 
 
 - (void)setHighlighted:(BOOL)highlighted
@@ -40,12 +61,12 @@
     [super setHighlighted:highlighted];
     
     if (highlighted) {
-        self.layer.shadowColor = [UIColor colorNamed:@"Light Green Sea"].CGColor;
-        self.layer.shadowRadius = 4;
+        [self setHighlightedState];
         
+    } else if (self.isEnabled) {
+        [self setDefaultState];
     } else {
-        self.layer.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.25].CGColor;
-        self.layer.shadowRadius = 2;
+        [self setDisabledState];
     }
 }
 
