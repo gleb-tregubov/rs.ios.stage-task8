@@ -6,7 +6,6 @@
 //
 
 #import "ArtistButton.h"
-//#import "ArtistViewController.h"
 #import "DrawingsViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -19,14 +18,11 @@ typedef NS_ENUM(NSInteger, pictureType) {
     pictureTypeTree = 3,
     pictureTypeLandscape = 4,
 };
-//typedef enum pictureType pictureType;
 
 @property (strong, nonatomic) DrawingsViewController *delegate;
 @property (assign, nonatomic) pictureType pictureType;
 
 -(instancetype)initWithFrame:(CGRect)frame title:(NSString *)title andPictureTypeEnum:(pictureType)pictureType;
-//- (void)setDefault;
-//- (void)setActive;
 
 @end
 

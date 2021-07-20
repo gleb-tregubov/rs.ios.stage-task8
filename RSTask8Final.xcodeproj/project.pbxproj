@@ -16,6 +16,7 @@
 		53195C4026A3C5F80088D802 /* DrawingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53195C3E26A3C5F80088D802 /* DrawingsViewController.m */; };
 		53195C4526A3C7880088D802 /* PaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53195C4326A3C7880088D802 /* PaletteViewController.m */; };
 		531A3C0426A58F160013F4EB /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A3C0326A58F160013F4EB /* TimerViewController.swift */; };
+		531DDC2626A71A270080F31E /* DrawingsSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531DDC2526A71A270080F31E /* DrawingsSwiftViewController.swift */; };
 		53535EF526A3F899004E1AFB /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53535EF426A3F879004E1AFB /* Montserrat-Medium.ttf */; };
 		53535EF626A3F89C004E1AFB /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53535EF326A3F879004E1AFB /* Montserrat-Regular.ttf */; };
 		53535EFE26A436AE004E1AFB /* ArtistButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 53535EFD26A436AE004E1AFB /* ArtistButton.m */; };
@@ -44,6 +45,7 @@
 		53195C4326A3C7880088D802 /* PaletteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaletteViewController.m; sourceTree = "<group>"; };
 		531A3C0226A58F160013F4EB /* RSTask8Final-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSTask8Final-Bridging-Header.h"; sourceTree = "<group>"; };
 		531A3C0326A58F160013F4EB /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		531DDC2526A71A270080F31E /* DrawingsSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingsSwiftViewController.swift; sourceTree = "<group>"; };
 		53535EF326A3F879004E1AFB /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		53535EF426A3F879004E1AFB /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		53535EFC26A436AE004E1AFB /* ArtistButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtistButton.h; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				53195C3D26A3C5F80088D802 /* DrawingsViewController.h */,
 				53195C3E26A3C5F80088D802 /* DrawingsViewController.m */,
+				531DDC2526A71A270080F31E /* DrawingsSwiftViewController.swift */,
 			);
 			path = DrawingsViewController;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				53535F0B26A46E75004E1AFB /* ColorButton.m in Sources */,
 				53195C2326A3C3BF0088D802 /* SceneDelegate.m in Sources */,
 				531A3C0426A58F160013F4EB /* TimerViewController.swift in Sources */,
+				531DDC2626A71A270080F31E /* DrawingsSwiftViewController.swift in Sources */,
 				53195C3A26A3C4C50088D802 /* ArtistViewController.m in Sources */,
 				53841BD526A52B650092A6B8 /* DrawingView.m in Sources */,
 			);

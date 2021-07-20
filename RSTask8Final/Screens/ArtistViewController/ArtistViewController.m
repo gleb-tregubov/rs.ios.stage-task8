@@ -90,6 +90,9 @@ typedef enum state state;
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{
         NSFontAttributeName:[UIFont fontWithName:@"Montserrat-Regular" size:17.0f] }
                                                           forState:UIControlStateHighlighted];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{
+        NSFontAttributeName:[UIFont fontWithName:@"Montserrat-Regular" size:17.0f] }
+                                                          forState:UIControlStateDisabled];
     self.navigationController.navigationBar.tintColor = [UIColor colorNamed:@"Light Green Sea"];
 //    self.navigationItem.rightBarButtonItem.tintColor = [UIColor colorNamed:@"Light Green Sea"];
 }
@@ -164,6 +167,9 @@ typedef enum state state;
     [self.timerButton setDisabledState];
     [self.drawButton setDefaultState];
     [self.shareButton setDefaultState];
+    
+    self.drawingsRightBarButton.enabled = YES;
+    self.drawingsRightBarButton.customView.alpha = 1;
     
 }
 
